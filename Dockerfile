@@ -8,6 +8,6 @@ ADD . /testing
 WORKDIR /testing
 
 # Run the tests
-RUN python -m unittest discover
-RUN python3 -m unittest discover
+
+CMD python -m unittest discover; python3 -m unittest discover
 
