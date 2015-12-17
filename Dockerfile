@@ -11,5 +11,3 @@ WORKDIR /testing
 RUN python -m unittest discover
 RUN python3 -m unittest discover
 
-# copy the verified file out
-RUN cp /testing/configfinder.py /verified/configfinder.py
