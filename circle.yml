@@ -7,5 +7,5 @@ dependencies:
     - ~/docker
   override:
     - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
-    - docker build -t testing -v $CIRCLE_ARTIFACTS:/verified .
+    - docker build -t testing .
     - mkdir -p ~/docker; docker save testing > ~/docker/image.tar
