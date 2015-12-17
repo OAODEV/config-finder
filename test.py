@@ -1,5 +1,5 @@
 import unittest
-
+from finders import cfg
 
 class TestConfigFinder(unittest.TestCase):
 
