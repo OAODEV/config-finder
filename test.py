@@ -52,7 +52,7 @@ class TestConfigFinder(unittest.TestCase):
         obj = object()
         self.assertEqual(cfg('notthekey', obj), obj)
         self.assertEqual(cfg('notthekey', int), int)
-        self.assertEqual(cfg('notthekey', ...), Ellipsis)
+        self.assertEqual(cfg('notthekey', Ellipsis), Ellipsis)
         self.assertEqual(cfg('notthekey', type(int)), type)
 
         # error case
