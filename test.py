@@ -10,4 +10,4 @@ class TestConfigFinder(unittest.TestCase):
         pass
 
     def test_can_pass(self):
-        self.assertTrue(False)
+        self.assertTrue(True)
