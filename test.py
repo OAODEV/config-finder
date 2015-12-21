@@ -1,3 +1,4 @@
+import os
 import unittest
 from finders import cfg
 
