@@ -5,7 +5,7 @@ RUN apk update && apk add --update python python3
 
 RUN mkdir /secret
 
-ADD . /testing
+ADD ./config-finder /testing
 
 WORKDIR /testing
 
