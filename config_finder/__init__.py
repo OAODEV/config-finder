@@ -1,1 +1,1 @@
-from finders import cfg
+from .finders import cfg
