@@ -4,10 +4,16 @@
 
 Python library that knows how to scare up some config.
 
-it checks three spots.
+# Checks three spots for configuration.
 
-first:  `os.environ[key]`
+## first
 
-second: The contents of a file at `/secret/<key>`
+The environment
 
-third: The first line containing `<key>=<value>\n` in a file at `/env`
+## second
+
+The contents of a file at `/secret/<key>`
+
+## third
+
+The first line containing `<key>=<value>\n` in a file at `/env`
