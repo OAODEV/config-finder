@@ -6,7 +6,12 @@ Python library that knows how to scare up some config.
 
 # Installation
 
-`pip install git+https://github.com/OAODEV/config-finder.git`
+* Install git & pip in your container by including the following in your Dockerfile:
+`RUN apt-get update && apt-get install -y git python-pip`
+
+* Install via pip by including the following in your Dockerfile:
+
+`RUN pip install git+https://github.com/OAODEV/config-finder.git`
 
 # How It Works
 
@@ -21,7 +26,7 @@ The first location containing a result will be returned and the remaining locati
 
 # Usage
 
-The `cfg` function returns a value for the given key, or the specified default. If key is not available and no default is set, then `cfg` returns a `KeyError`.
+The `cfg` function returns a value for the given key, or the specified default. If key is not available and no default is set, then `cfg` raises a `KeyError`.
 
 ```
 from config_finder import cfg
