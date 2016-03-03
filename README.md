@@ -4,16 +4,26 @@
 
 Python library that knows how to scare up some config.
 
-# Checks three spots for configuration.
+# Installation
 
-## first
+`pip install git+https://github.com/OAODEV/config-finder.git`
 
-The environment
+# How It Works
 
-## second
+config-finder checks three spots for configuration in the following order:
 
-The contents of a file at `/secret/<key>`
+* environment variables
+* the contents of a file at `/secret/<key>`
+* the first line containing `<key>=<value>\n` in a file at `/env`
 
-## third
+The first location containing a result will be returned and the remaining locations will be ignored.
 
-The first line containing `<key>=<value>\n` in a file at `/env`
+
+# Usage
+
+The `cfg` function returns a value for the given key, or the specified default. If key is not available and no default is set, then `cfg` returns a `KeyError`.
+
+```
+from config_finder import cfg
+print "The value for myKey is '{}'".format(cfg("mykey", None))
+```
