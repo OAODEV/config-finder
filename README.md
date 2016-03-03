@@ -7,11 +7,10 @@ Python library that knows how to scare up some config.
 # Installation
 
 * Install git & pip in your container by including the following in your Dockerfile:
-`RUN apt-get update && apt-get install -y git python-pip`
+ * `RUN apt-get update && apt-get install -y git python-pip`
 
 * Install via pip by including the following in your Dockerfile:
-
-`RUN pip install git+https://github.com/OAODEV/config-finder.git`
+ * `RUN pip install git+https://github.com/OAODEV/config-finder.git`
 
 # How It Works
 
