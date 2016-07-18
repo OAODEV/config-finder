@@ -70,7 +70,7 @@ def first_check(check_funcs, fallback_check_func=cfg):
         # return anything that's not an error
         for f in check_funcs:
             try:
-                return f(key, default)
+                return f(key)
             except:
                 pass
         # if none of them find it, use the fallback

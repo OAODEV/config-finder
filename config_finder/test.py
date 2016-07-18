@@ -8,7 +8,7 @@ from finders import (
 class TestFirstCheck(unittest.TestCase):
 
     def test_first_check_checks_first_first(self):
-        constcfg = first_check([lambda x, y: "constant"])
+        constcfg = first_check([lambda x: "constant"])
         self.assertEqual(constcfg("key"), "constant")
         self.assertEqual(constcfg("xyz", "default"), "constant")
 
