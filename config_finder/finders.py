@@ -61,3 +61,19 @@ def cfg(key, default=NO_DEFAULT):
     # otherwise return the default that was passed
     else:
         return default
+
+
+def first_check(check_funcs, fallback_check_func=cfg):
+    """ wrap a checker with a list of checkers to try first in order """
+    def wrapped(key, default=NO_DEFAULT):
+        # first try the check_funcs in order
+        # return anything that's not an error
+        for f in check_funcs:
+            try:
+                return f(key)
+            except:
+                pass
+        # if none of them find it, use the fallback
+        return fallback_check_func(key, default)
+
+    return wrapped

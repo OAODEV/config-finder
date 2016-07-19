@@ -1,6 +1,29 @@
 import os
 import unittest
-from finders import cfg
+from finders import (
+    cfg,
+    first_check,
+)
+
+class TestFirstCheck(unittest.TestCase):
+
+    def test_first_check_checks_first_first(self):
+        constcfg = first_check([lambda x: "constant"])
+        self.assertEqual(constcfg("key"), "constant")
+        self.assertEqual(constcfg("xyz", "default"), "constant")
+
+    def test_first_falls_back(self):
+
+        def err(x, y):
+            raise NameError
+
+        os.environ['fallbackkey'] = 'fallbackvalue'
+        fallbackcfg = first_check([err])
+        self.assertEqual(fallbackcfg('fallbackkey'), 'fallbackvalue')
+        self.assertEqual(fallbackcfg('keymiss', "testdefault"), "testdefault")
+
+    def test_can_pass(self):
+        self.assertTrue(True)
 
 class TestConfigFinder(unittest.TestCase):
 
